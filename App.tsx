@@ -154,7 +154,7 @@ const App: React.FC = () => {
   const currentTheme = VISUAL_THEMES.find(t => t.name === state.visualTheme) || VISUAL_THEMES[0];
 
   return (
-    <div className={`min-h-screen ${currentTheme.bgClass} flex flex-col items-center justify-center p-4 transition-all duration-1000 overflow-x-hidden relative selection:bg-white selection:text-slate-900`}>
+    <div className={`min-h-screen ${currentTheme.bgClass} flex flex-col items-center justify-center px-2 py-4 sm:p-4 transition-all duration-1000 overflow-x-hidden relative selection:bg-white selection:text-slate-900`}>
       
       {state.status === 'playing' && (
         <div className="fixed top-0 left-0 w-full h-1 bg-slate-900/50 z-[100]">
@@ -181,7 +181,7 @@ const App: React.FC = () => {
       )}
 
       {state.status === 'setup' && (
-        <div className="w-full animate-float max-h-screen overflow-y-auto no-scrollbar py-12">
+        <div className="w-full animate-float max-h-screen overflow-y-auto no-scrollbar py-10 sm:py-12">
           <PlayerSetup 
             onStart={handleStartGame} 
             history={history} 

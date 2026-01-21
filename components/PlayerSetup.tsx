@@ -39,7 +39,7 @@ const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStart, history, onClearHist
   const currentTheme = VISUAL_THEMES.find(t => t.name === visualTheme) || VISUAL_THEMES[0];
 
   return (
-    <div className="w-full max-w-[460px] sm:max-w-[560px] mx-auto space-y-8 px-4 pb-20">
+    <div className="w-full max-w-[520px] sm:max-w-[560px] mx-auto space-y-8 px-2 sm:px-4 pb-20">
       <div className="p-8 bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-slate-700/50 shadow-2xl">
         <div className="text-center mb-8">
           <div className={`inline-block p-4 rounded-3xl ${currentTheme.accentClass}/20 mb-4 transition-colors`}>
