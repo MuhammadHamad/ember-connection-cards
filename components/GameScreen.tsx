@@ -42,7 +42,7 @@ const GameScreen: React.FC<GameScreenProps> = ({ gameState, onNext, onFinish, on
   const isDeckEmpty = gameState.deck.length === 0;
 
   return (
-    <div className="flex flex-col min-h-[85vh] w-full max-w-2xl mx-auto px-4 relative z-10">
+    <div className="flex flex-col min-h-[85vh] w-full max-w-full sm:max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
       {/* Dynamic Player Indicators */}
       <div className="flex justify-between items-center mb-12">
         <div className={`transition-all duration-500 ${gameState.activePlayerIndex === 0 ? 'scale-110 opacity-100' : 'opacity-40 grayscale'}`}>
@@ -78,7 +78,7 @@ const GameScreen: React.FC<GameScreenProps> = ({ gameState, onNext, onFinish, on
       </div>
 
       {/* Guidance and Navigation */}
-      <div className="mt-10 h-24 flex flex-col items-center justify-center gap-4">
+      <div className="mt-10 h-auto flex flex-col items-center justify-center gap-4">
         {isFlipped ? (
           <button
             onClick={isDeckEmpty ? handleFinish : handleNextTurn}

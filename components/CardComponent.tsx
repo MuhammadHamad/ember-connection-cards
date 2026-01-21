@@ -19,23 +19,23 @@ const CardComponent: React.FC<CardComponentProps> = ({
   const theme = VISUAL_THEMES.find(t => t.name === visualTheme) || VISUAL_THEMES[0];
 
   return (
-    <div className="w-full max-w-sm aspect-[3/4] card-perspective cursor-pointer group mx-auto" onClick={onFlip}>
+    <div className="w-full max-w-full sm:max-w-sm aspect-[3/4] card-perspective cursor-pointer group mx-auto" onClick={onFlip}>
       <div className={`relative w-full h-full card-inner ${isFlipped ? 'card-flipped' : ''}`}>
         
         {/* Front of Card (Face Down) */}
-        <div className="absolute inset-0 card-front bg-slate-900 rounded-[2.5rem] border-[12px] border-slate-800 shadow-2xl flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div className="absolute inset-0 card-front bg-slate-900 rounded-[2.5rem] border-[10px] sm:border-[12px] border-slate-800 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden">
           <div className={`absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] ${theme.accentGlow} via-transparent to-transparent`}></div>
           <div className="relative z-10 text-center">
             <div className={`w-24 h-24 rounded-full border-2 border-slate-700 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform`}>
               <i className={`fas ${theme.icon} ${theme.accentText} text-3xl animate-pulse`}></i>
             </div>
-            <h3 className="text-xl font-serif text-slate-300 italic mb-2">Ember</h3>
+            <h3 className="text-xl sm:text-2xl font-serif text-slate-300 italic mb-2">Ember</h3>
             <p className="text-slate-500 text-sm tracking-widest uppercase">Tap to reveal</p>
           </div>
         </div>
 
         {/* Back of Card (Face Up) */}
-        <div className={`absolute inset-0 card-back bg-white text-slate-900 rounded-[2.5rem] border-[12px] ${theme.accentBorder.replace('border-', 'border-opacity-10 border-')} shadow-2xl flex flex-col p-10`}>
+        <div className={`absolute inset-0 card-back bg-white text-slate-900 rounded-[2.5rem] border-[10px] sm:border-[12px] ${theme.accentBorder.replace('border-', 'border-opacity-10 border-')} shadow-2xl flex flex-col p-6 sm:p-10`}>
           <div className="flex justify-between items-center mb-6">
             <span className={`text-[10px] font-bold tracking-[0.2em] uppercase ${theme.accentText} px-3 py-1 bg-slate-50 rounded-full border border-slate-100`}>
               {card.category}
@@ -50,7 +50,7 @@ const CardComponent: React.FC<CardComponentProps> = ({
           </div>
 
           <div className="flex-grow flex flex-col justify-center">
-            <p className="text-2xl md:text-3xl font-serif leading-snug italic font-medium text-slate-800">
+            <p className="text-xl sm:text-2xl md:text-3xl font-serif leading-snug italic font-medium text-slate-800">
               "{card.prompt}"
             </p>
           </div>

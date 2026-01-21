@@ -39,7 +39,7 @@ const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStart, history, onClearHist
   const currentTheme = VISUAL_THEMES.find(t => t.name === visualTheme) || VISUAL_THEMES[0];
 
   return (
-    <div className="max-w-lg mx-auto space-y-8 px-4 pb-20">
+    <div className="w-full max-w-full sm:max-w-lg mx-auto space-y-8 px-4 pb-20">
       <div className="p-8 bg-slate-800/40 backdrop-blur-xl rounded-[2.5rem] border border-slate-700/50 shadow-2xl">
         <div className="text-center mb-8">
           <div className={`inline-block p-4 rounded-3xl ${currentTheme.accentClass}/20 mb-4 transition-colors`}>
@@ -118,7 +118,7 @@ const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStart, history, onClearHist
 
           <button
             type="submit"
-            className={`w-full py-4 ${currentTheme.accentClass} text-white rounded-[1.5rem] font-bold text-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-xl mt-4`}
+            className={`w-full py-4 ${currentTheme.accentClass} text-white rounded-[1.5rem] font-bold text-base sm:text-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-xl mt-4`}
           >
             Begin Journey
           </button>
