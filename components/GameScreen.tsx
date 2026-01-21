@@ -44,10 +44,10 @@ const GameScreen: React.FC<GameScreenProps> = ({ gameState, onNext, onFinish, on
   return (
     <div className="flex flex-col min-h-[85vh] w-full max-w-full sm:max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
       {/* Dynamic Player Indicators */}
-      <div className="flex justify-between items-center mb-12">
-        <div className={`transition-all duration-500 ${gameState.activePlayerIndex === 0 ? 'scale-110 opacity-100' : 'opacity-40 grayscale'}`}>
+      <div className="flex justify-between items-center mb-8 sm:mb-12 gap-3">
+        <div className={`min-w-0 transition-all duration-500 ${gameState.activePlayerIndex === 0 ? 'scale-110 opacity-100' : 'opacity-40 grayscale'}`}>
           <p className={`${theme.accentText} font-bold text-[10px] tracking-widest uppercase mb-1`}>Speaker 1</p>
-          <h2 className="text-2xl font-serif text-white">{gameState.players[0]}</h2>
+          <h2 className="text-xl sm:text-2xl font-serif text-white truncate max-w-[40vw] sm:max-w-none">{gameState.players[0]}</h2>
         </div>
         
         <div className="flex flex-col items-center">
@@ -55,9 +55,9 @@ const GameScreen: React.FC<GameScreenProps> = ({ gameState, onNext, onFinish, on
           <p className="text-slate-600 text-[10px] font-bold uppercase tracking-widest">Versus</p>
         </div>
 
-        <div className={`text-right transition-all duration-500 ${gameState.activePlayerIndex === 1 ? 'scale-110 opacity-100' : 'opacity-40 grayscale'}`}>
+        <div className={`min-w-0 text-right transition-all duration-500 ${gameState.activePlayerIndex === 1 ? 'scale-110 opacity-100' : 'opacity-40 grayscale'}`}>
           <p className={`${theme.accentText} font-bold text-[10px] tracking-widest uppercase mb-1`}>Speaker 2</p>
-          <h2 className="text-2xl font-serif text-white">{gameState.players[1]}</h2>
+          <h2 className="text-xl sm:text-2xl font-serif text-white truncate max-w-[40vw] sm:max-w-none ml-auto">{gameState.players[1]}</h2>
         </div>
       </div>
 

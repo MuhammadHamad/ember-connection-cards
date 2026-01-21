@@ -50,7 +50,7 @@ const CardComponent: React.FC<CardComponentProps> = ({
           </div>
 
           <div className="flex-grow flex flex-col justify-center">
-            <p className="text-xl sm:text-2xl md:text-3xl font-serif leading-snug italic font-medium text-slate-800">
+            <p className="text-xl sm:text-2xl md:text-3xl font-serif leading-snug italic font-medium text-slate-800 break-words [overflow-wrap:anywhere]">
               "{card.prompt}"
             </p>
           </div>

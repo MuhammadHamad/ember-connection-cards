@@ -154,7 +154,7 @@ const App: React.FC = () => {
   const currentTheme = VISUAL_THEMES.find(t => t.name === state.visualTheme) || VISUAL_THEMES[0];
 
   return (
-    <div className={`min-h-screen ${currentTheme.bgClass} flex flex-col items-center justify-center p-4 transition-all duration-1000 overflow-hidden relative selection:bg-white selection:text-slate-900`}>
+    <div className={`min-h-screen ${currentTheme.bgClass} flex flex-col items-center justify-center p-4 transition-all duration-1000 overflow-x-hidden relative selection:bg-white selection:text-slate-900`}>
       
       {state.status === 'playing' && (
         <div className="fixed top-0 left-0 w-full h-1 bg-slate-900/50 z-[100]">
@@ -166,13 +166,13 @@ const App: React.FC = () => {
       )}
 
       {state.status !== 'setup' && (
-        <div className="fixed top-8 right-8 z-[110] flex flex-col items-end gap-2">
+        <div className="fixed top-3 right-3 sm:top-8 sm:right-8 z-[110] flex flex-col items-end gap-2">
           <button 
               onClick={handleReset}
-              className="flex items-center gap-2 px-6 py-3 bg-slate-900/30 hover:bg-slate-800 text-slate-500 hover:text-white rounded-full border border-slate-800/50 transition-all text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur-xl group"
+              className="flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 bg-slate-900/30 hover:bg-slate-800 text-slate-500 hover:text-white rounded-full border border-slate-800/50 transition-all text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur-xl group"
           >
               <i className="fas fa-home text-[10px] group-hover:-translate-y-0.5 transition-transform"></i>
-              Home
+              <span className="hidden sm:inline">Home</span>
           </button>
           {state.status === 'playing' && (
             <p className="text-[8px] text-slate-600 uppercase tracking-widest px-2">Autosave Active</p>

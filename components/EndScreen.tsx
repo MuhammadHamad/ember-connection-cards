@@ -12,13 +12,13 @@ const EndScreen: React.FC<EndScreenProps> = ({ gameState, onReset }) => {
   const impactfulCards = gameState.drawnCards.filter(c => gameState.impactfulCardIds.includes(c.id));
 
   return (
-    <div className="max-w-4xl w-full mx-auto text-center py-12 px-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+    <div className="max-w-4xl w-full mx-auto text-center py-10 sm:py-12 px-4 sm:px-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
       <div className="mb-12">
         <div className={`w-24 h-24 ${theme.accentClass} rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-black/50 relative`}>
           <div className="absolute inset-0 rounded-full animate-ping opacity-20 bg-white"></div>
           <i className="fas fa-feather-pointed text-white text-4xl relative z-10"></i>
         </div>
-        <h2 className="text-5xl font-serif text-white mb-4 italic">Journey Complete</h2>
+        <h2 className="text-4xl sm:text-5xl font-serif text-white mb-4 italic">Journey Complete</h2>
         
         {/* Persistence Indicator */}
         <div className="flex items-center justify-center gap-2 mb-6">
@@ -26,7 +26,7 @@ const EndScreen: React.FC<EndScreenProps> = ({ gameState, onReset }) => {
           <p className="text-emerald-500/80 text-[10px] font-bold uppercase tracking-[0.3em]">Session Saved to Journey Log</p>
         </div>
 
-        <p className="text-slate-400 text-lg max-w-md mx-auto">
+        <p className="text-slate-400 text-base sm:text-lg max-w-md mx-auto">
           {gameState.drawnCards.length} prompts explored. The connections you've built are now part of your story.
         </p>
       </div>
@@ -69,10 +69,10 @@ const EndScreen: React.FC<EndScreenProps> = ({ gameState, onReset }) => {
         </div>
       )}
 
-      <div className="max-w-xl mx-auto bg-slate-900/40 backdrop-blur-md rounded-[3rem] p-12 border border-slate-800/50 mb-12 shadow-2xl relative overflow-hidden">
+      <div className="max-w-xl mx-auto bg-slate-900/40 backdrop-blur-md rounded-[3rem] p-8 sm:p-12 border border-slate-800/50 mb-12 shadow-2xl relative overflow-hidden">
         <i className={`fas ${theme.icon} absolute -bottom-10 -right-10 text-9xl opacity-[0.03] rotate-12`}></i>
         
-        <div className="grid grid-cols-2 gap-8 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 relative z-10">
           <div className="text-center">
             <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-3">Companions</p>
             <div className="flex flex-col gap-1">
@@ -81,7 +81,7 @@ const EndScreen: React.FC<EndScreenProps> = ({ gameState, onReset }) => {
               <p className="text-white text-xl font-serif">{gameState.players[1]}</p>
             </div>
           </div>
-          <div className="text-center border-l border-slate-800/50 pl-8">
+          <div className="text-center sm:border-l border-slate-800/50 sm:pl-8">
             <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-3">Theme</p>
             <p className="text-white text-xl font-serif italic mb-4">{gameState.theme}</p>
             <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${theme.accentClass}/10 border ${theme.accentBorder}/20`}>
